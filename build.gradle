@@ -1,0 +1,16 @@
+apply plugin: 'idea'
+apply plugin: 'jasmineGradle'
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        mavenCentral();
+    }
+    dependencies {
+        classpath "com.github.dzhaughnroth:jasmine-gradle-plugin:0.4"
+    }
+}
+
+repositories {
+    mavenCentral();
+}
