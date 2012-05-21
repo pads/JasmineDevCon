@@ -7,10 +7,25 @@ InfiniteImprobabilityDrive.prototype.getProbability = function(sucessCallback, e
 		url: this.baseUrl,
 		type: "GET",
 		success: function(data, status, request) {
-			sucessCallback($.parseJSON(request.responseText).message);
+			sucessCallback(safeJSONParse(request));
 		},
 		error: function(request, status, error) {
-			errorCallback($.parseJSON(request.responseText).message);
-		}
+			errorCallback(safeJSONParse(request));
+		},
+		statusCode: {
+            404: function() {
+                errorCallback('Not found!');
+            },
+            500: function(request) {
+                errorCallback(safeJSONParse(request));
+            }
+        }
 	});
 };
+
+function safeJSONParse(request) {
+    if(request.responseText) {
+        return $.parseJSON(request.responseText).message;
+    }
+    return null;
+}
