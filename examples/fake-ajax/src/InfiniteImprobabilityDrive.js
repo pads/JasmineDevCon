@@ -2,12 +2,12 @@ function InfiniteImprobabilityDrive() {
 	this.baseUrl = 'http://www.heartofgold.com';
 }
 
-InfiniteImprobabilityDrive.prototype.getProbability = function(sucessCallback, errorCallback) {
+InfiniteImprobabilityDrive.prototype.getProbability = function(successCallback, errorCallback) {
 	$.ajax({
 		url: this.baseUrl,
 		type: "GET",
 		success: function(data, status, request) {
-			sucessCallback(safeJSONParse(request));
+			successCallback(safeJSONParse(request));
 		},
 		error: function(request, status, error) {
 			errorCallback(safeJSONParse(request));
