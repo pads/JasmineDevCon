@@ -26,9 +26,7 @@ describe("Infinite Improbability Drive", function() {
             responseXML: '<message>100000000000/1</message>'
         });
 
-        runs(function () {
-            infiniteImprobabilityDrive.getProbability(successCallback, errorCallback);
-        });
+        infiniteImprobabilityDrive.getProbability(successCallback, errorCallback);
 
         waits(500);
 
@@ -47,9 +45,7 @@ describe("Infinite Improbability Drive", function() {
             responseXML: '<message>Alert!  Missles heading your way</message>'
         });
 
-        runs(function () {
-            infiniteImprobabilityDrive.getProbability(successCallback, errorCallback);
-        });
+        infiniteImprobabilityDrive.getProbability(successCallback, errorCallback);
 
         waits(500);
 
@@ -67,9 +63,7 @@ describe("Infinite Improbability Drive", function() {
             dataType: 'xml'
         });
 
-        runs(function () {
-            infiniteImprobabilityDrive.getProbability(successCallback, errorCallback);
-        });
+        infiniteImprobabilityDrive.getProbability(successCallback, errorCallback);
 
         waits(500);
 
