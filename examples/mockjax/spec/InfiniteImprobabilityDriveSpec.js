@@ -27,7 +27,9 @@ describe("Infinite Improbability Drive", function() {
 
         infiniteImprobabilityDrive.getProbability(successCallback, errorCallback);
 
-        waits(500);
+        waitsFor(function() {
+            return successCallback.callCount > 0;
+        }, "success call back never called", 500);
 
         runs(function () {
             expect(successCallback).toHaveBeenCalledWith('100000000000/1');
