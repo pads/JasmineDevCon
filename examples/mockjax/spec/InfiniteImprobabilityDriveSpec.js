@@ -1,7 +1,6 @@
 describe("Infinite Improbability Drive", function() {
 
 	var infiniteImprobabilityDrive;
-	var request;
 	var successCallback;
 	var errorCallback;
 
